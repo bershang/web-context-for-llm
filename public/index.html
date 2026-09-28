@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Context for LLM</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div><p class="eyebrow">CONVERSATIONAL AI / LLM CONTEXT</p><h1>Web Context for LLM</h1><p class="subtitle">Extract, normalize and preload public web content as plain-text context for AI applications.</p></div>
+      <div id="statusBadge" class="status-badge idle">No active context</div>
+    </header>
+    <section class="card auth-card"><div><h2>API access</h2><p>The API key is kept only for this browser tab.</p></div><div class="auth-row"><input id="apiKey" type="password" autocomplete="off" placeholder="API key" /><button id="checkStatusBtn" class="secondary">Validate</button></div></section>
+    <section class="grid">
+      <div class="card"><div class="section-heading"><div><h2>Context sources</h2><p>Add a public web page or JSON/text endpoint.</p></div><button id="addUrlBtn" class="icon-btn" title="Add URL" aria-label="Add URL">+</button></div>
+        <label class="field-label" for="configName">Configuration name</label><input id="configName" type="text" placeholder="Example: Product documentation" />
+        <div id="urlList" class="url-list"></div><div class="actions"><button id="testBtn" class="secondary">Test extraction</button><button id="loadBtn" class="primary">Load context</button></div><p id="actionMessage" class="action-message"></p>
+      </div>
+      <aside class="card recent-card"><div class="section-heading compact"><div><h2>Recent</h2><p>Last three URL sets saved in this browser.</p></div></div><div id="recentList" class="recent-list"></div></aside>
+    </section>
+    <section class="card result-card"><div class="section-heading"><div><h2>Extraction result</h2><p>Inspect normalized content before loading it into memory.</p></div><div class="view-switch"><button id="textViewBtn" class="small active">Text</button><button id="payloadViewBtn" class="small">Payload</button></div></div><div id="sourceSummary" class="source-summary"></div><pre id="resultOutput">No extraction has been run yet.</pre></section>
+  </main>
+  <template id="urlRowTemplate"><div class="url-row"><input class="url-input" type="url" placeholder="https://example.com/docs" /><button class="remove-url" title="Remove URL" aria-label="Remove URL">×</button></div></template>
+  <script src="/app.js" defer></script>
+</body>
+</html>

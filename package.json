@@ -1,0 +1,31 @@
+{
+  "name": "web-context-for-llm",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "Web context extraction service for Conversational AI and LLM applications.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node scripts/check-syntax.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "llm",
+    "conversational-ai",
+    "web-extraction",
+    "readability",
+    "ssrf",
+    "nodejs"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "jsdom": "^26.1.0"
+  }
+}

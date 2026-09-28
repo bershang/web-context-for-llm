@@ -1,0 +1,27 @@
+@baseUrl = http://localhost:3001
+@apiKey = replace-with-your-local-api-key
+
+### Health (public)
+GET {{baseUrl}}/health
+
+### Status
+GET {{baseUrl}}/api/status
+x-api-key: {{apiKey}}
+
+### Extract without changing active context
+POST {{baseUrl}}/api/context/test
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+< ./examples/request.json
+
+### Extract and load into memory
+POST {{baseUrl}}/api/context/load
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+< ./examples/request.json
+
+### Retrieve active context as text/plain
+GET {{baseUrl}}/api/context
+x-api-key: {{apiKey}}
